@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vegas Studio | Criando o Futuro dos Jogos</title>
+</head>
+<body>
+
+<section class="hero">
+
+    <div class="panel active" style="background-image:url('img/jogo1.jpg')">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <span>JOGO 01</span>
+            <h1>Nome do Jogo</h1>
+            <p>Uma pequena descrição do jogo.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+
+    <div class="panel" style="background-image:url('img/jogo2.jpg')">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <span>JOGO 02</span>
+            <h1>Outro Jogo</h1>
+            <p>Descrição.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+
+    <div class="panel" style="background-image:url('img/jogo3.jpg')">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <span>JOGO 03</span>
+            <h1>Nome</h1>
+            <p>Descrição.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+
+    <div class="panel" style="background-image:url('img/jogo4.jpg')">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <span>JOGO 04</span>
+            <h1>Nome</h1>
+            <p>Descrição.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+
+    <div class="panel" style="background-image:url('img/jogo5.jpg')">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <span>JOGO 05</span>
+            <h1>Nome</h1>
+            <p>Descrição.</p>
+            <a href="#">Ver mais</a>
+        </div>
+    </div>
+
+</section>
+
+<script>
+
+const panels = document.querySelectorAll(".panel");
+
+panels.forEach(panel=>{
+
+    panel.addEventListener("mouseenter",()=>{
+
+        panels.forEach(p=>p.classList.remove("active"));
+
+        panel.classList.add("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+
