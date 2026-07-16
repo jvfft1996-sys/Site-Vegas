@@ -32,15 +32,29 @@ export function createStars(scene){
     );
 
 
-    const material = new THREE.PointsMaterial({
+    const texture = new THREE.TextureLoader()
+.load("/textures/estrela.jpeg");
 
-        color:0x6ecbff,
 
-        size:2,
+const material = new THREE.PointsMaterial({
 
-        sizeAttenuation:true
+    map: texture,
 
-    });
+    color: 0xffffff,
+
+    size: 8,
+
+    transparent: true,
+
+    opacity: 0.9,
+
+    depthWrite: false,
+
+    blending: THREE.AdditiveBlending,
+
+    sizeAttenuation: true
+
+});
 
 
     const starField = new THREE.Points(
