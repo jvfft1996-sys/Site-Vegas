@@ -169,3 +169,30 @@ body{
     transform:scale(1.08);
 
 }
+
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    background:#000;
+
+    z-index:9999;
+
+    overflow:hidden;
+
+}
+
+#space{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+}
