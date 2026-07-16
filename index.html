@@ -7,6 +7,11 @@
     <title>Vegas Studio | Criando o Futuro dos Jogos</title>
 </head>
 <body>
+    <div id="intro">
+
+    <canvas id="space"></canvas>
+
+</div>
 
 <section class="hero">
 
@@ -67,15 +72,17 @@
 
 </section>
 
+<script type="module" src="/main.js"></script>
+
 <script>
 
 const panels = document.querySelectorAll(".panel");
 
-panels.forEach(panel=>{
+panels.forEach(panel => {
 
-    panel.addEventListener("mouseenter",()=>{
+    panel.addEventListener("mouseenter", () => {
 
-        panels.forEach(p=>p.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
 
         panel.classList.add("active");
 
@@ -83,8 +90,9 @@ panels.forEach(panel=>{
 
 });
 
-</script>
 
+
+</script>
 </body>
 </html>
 
