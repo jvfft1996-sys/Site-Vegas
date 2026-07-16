@@ -1,0 +1,29 @@
+{
+  "name": "vegas_studio_beta",
+  "version": "1.0.0",
+  "description": "o Site Oficial da Vegas onde contamos quem nos somos, nossa historia e a nossa galeria de jogos",
+"type": "module",
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvfft1996-sys/Site-Vegas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvfft1996-sys/Site-Vegas/issues"
+  },
+  "homepage": "https://github.com/jvfft1996-sys/Site-Vegas#readme",
+  "dependencies": {
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "vite": "^8.1.4"
+  }
+}
