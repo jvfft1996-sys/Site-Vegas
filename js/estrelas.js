@@ -11,7 +11,7 @@ const brightness = [];
 const pulseSpeed = [];
 const pulseOffset = [];
 
-    const amount = 25000;
+    const amount = 29000;
 
 
     for(let i = 0; i < amount; i++){

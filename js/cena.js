@@ -68,6 +68,38 @@ export function createScene() {
     mediumStars.scale.setScalar(pulse);
 
     const time = performance.now() * 0.001;
+    // ================================
+// Respiração da estrela principal
+// ================================
+const starPulse =
+    1 +
+    Math.sin(
+        time * mainStar.userData.pulseSpeed
+    ) *
+    mainStar.userData.pulseAmount;
+
+    // Respiração dos raios
+
+mainStar.userData.rays.scale.set(
+    0.8 * starPulse,
+    0.8 * starPulse,
+    1
+);
+
+// Núcleo
+mainStar.userData.core.scale.set(
+    0.20 * starPulse,
+    0.20 * starPulse,
+    1
+);
+
+
+// Glow
+mainStar.userData.glow.scale.set(
+    1.8 * starPulse,
+    1.8 * starPulse,
+    1
+);
 
     // Respiração da câmera
     camera.position.z = 5 + Math.sin(time * 0.18) * 0.08;
