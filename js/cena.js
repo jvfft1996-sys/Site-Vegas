@@ -1,5 +1,9 @@
 import * as THREE from "three";
+
+
 import { createStars } from "./estrelas.js";
+import { createMediumStars } from "./estrelas_media.js";
+import { createMainStar } from "./main_estrela.js";
 
 export function createScene() {
 
@@ -17,8 +21,9 @@ export function createScene() {
 
     // Cena
     const scene = new THREE.Scene();
-    createStars(scene);
-
+   const starField = createStars(scene);
+   const mediumStars = createMediumStars(scene);
+   const mainStar = createMainStar(scene);
     // Cor de fundo
     scene.background = new THREE.Color(0x000000);
 
@@ -43,13 +48,36 @@ export function createScene() {
     });
 
     // Loop de renderização
-    function animate() {
+   function animate(){
 
-        requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
 
-        renderer.render(scene, camera);
+    starField.rotation.y += 0.00005;
+    mediumStars.rotation.y += 0.00009;
 
-    }
+    const t = performance.now() * 0.001;
+
+    const pulse =
+        1 +
+        Math.sin(
+            t * mediumStars.userData.pulseSpeed +
+            mediumStars.userData.pulseOffset
+        ) *
+        mediumStars.userData.pulseAmount;
+
+    mediumStars.scale.setScalar(pulse);
+
+    const time = performance.now() * 0.001;
+
+    // Respiração da câmera
+    camera.position.z = 5 + Math.sin(time * 0.18) * 0.08;
+
+    // Faz a câmera olhar sempre para o centro
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+
+}
 
     animate();
 
