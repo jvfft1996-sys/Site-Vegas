@@ -73,7 +73,7 @@ const bloomPass = new UnrealBloomPass(
         window.innerHeight
     ),
 
-    1.2, // intensidade
+    0.8, // intensidade
 
     0.45, // raio
 
@@ -116,8 +116,8 @@ const starPulse =
     // Respiração dos raios
 
 mainStar.userData.rays.scale.set(
-    0.8 * starPulse,
-    0.8 * starPulse,
+    3.3* starPulse,
+    3.3* starPulse,
     1
 );
 
@@ -131,8 +131,8 @@ mainStar.userData.core.scale.set(
 
 // Glow
 mainStar.userData.glow.scale.set(
-    4.8 * starPulse,
-    4.8 * starPulse,
+    7* starPulse,
+    7 * starPulse,
     1
 );
 
@@ -147,8 +147,8 @@ const flarePulse =
 
 
 mainStar.userData.flare.scale.set(
-    1.6 * flarePulse,
-    1.6 * flarePulse,
+    2.2 * flarePulse,
+    2.2 * flarePulse,
     1
 );
 

@@ -250,6 +250,77 @@ function createHaloTexture(){
     ctx.lineTo(256,502);
     ctx.stroke();
 
+    // ==========================
+// Diagonal \
+// ==========================
+
+ctx.save();
+
+ctx.translate(256,256);
+
+ctx.rotate(Math.PI / 4);
+
+const diagonal1 = ctx.createLinearGradient(
+    -256,
+    0,
+    256,
+    0
+);
+
+diagonal1.addColorStop(0,"rgba(255,255,255,0)");
+diagonal1.addColorStop(0.45,"rgba(180,220,255,0.08)");
+diagonal1.addColorStop(0.5,"rgba(180,220,255,0.18)");
+diagonal1.addColorStop(0.55,"rgba(180,220,255,0.08)");
+diagonal1.addColorStop(1,"rgba(255,255,255,0)");
+ctx.fillStyle = diagonal1;
+
+ctx.fillRect(
+    -100,
+    -1,
+    200,
+    2
+);
+
+ctx.restore();
+
+
+// ==========================
+// Diagonal /
+// ==========================
+
+ctx.save();
+
+ctx.translate(256,256);
+
+ctx.rotate(-Math.PI / 4);
+
+
+const diagonal2 = ctx.createLinearGradient(
+    -256,
+    0,
+    256,
+    0
+);
+
+
+diagonal2.addColorStop(0,"rgba(255,255,255,0)");
+diagonal2.addColorStop(0.45,"rgba(180,220,255,0.08)");
+diagonal2.addColorStop(0.5,"rgba(180,220,255,0.18)");
+diagonal2.addColorStop(0.55,"rgba(180,220,255,0.08)");
+diagonal2.addColorStop(1,"rgba(255,255,255,0)");
+ctx.fillStyle = diagonal2;
+
+
+ctx.fillRect(
+    -100,
+    -1,
+    200,
+    2
+);
+
+
+ctx.restore();
+
     return new THREE.CanvasTexture(canvas);
 
 }
@@ -272,7 +343,7 @@ function createCore(){
 
     const core = new THREE.Sprite(material);
 
-    core.scale.set(0.34,0.34,1);
+    core.scale.set(0.20,0.20,1);
 
     return core;
 
@@ -289,7 +360,7 @@ function createGlow(){
 
         transparent:true,
 
-        opacity:1,
+        opacity:0.35,
 
         depthWrite:false,
 
@@ -299,7 +370,7 @@ function createGlow(){
 
     const glow = new THREE.Sprite(material);
 
-    glow.scale.set(1.1,1.1,1);
+    glow.scale.set(4.8,4.8,1);
 
     return glow;
 
@@ -331,8 +402,8 @@ function createFlare(){
 
 
     flare.scale.set(
-        2.5,
-        2.5,
+        1.6,
+        1.6,
         1
     );
 
@@ -366,8 +437,8 @@ function createHalo(){
     const halo = new THREE.Sprite(material);
 
     halo.scale.set(
-        2.0,
-        2.0,
+        2.8,
+        2.8,
         1
     );
 
@@ -389,7 +460,7 @@ function createRays(){
 
         transparent:true,
 
-        opacity:0.25,
+        opacity:1,
 
         depthWrite:false,
 
@@ -402,8 +473,8 @@ function createRays(){
 
 
     rays.scale.set(
-        1.8,
-        1.8,
+        3,
+        3,
         1
     );
 
