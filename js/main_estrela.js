@@ -51,11 +51,146 @@ function createGlowTexture(){
     return new THREE.CanvasTexture(canvas);
 
 }
+
+/* ======================================================
+   TEXTURA DO LENS FLARE
+====================================================== */
+
+function createFlareTexture(){
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = 512;
+    canvas.height = 512;
+
+
+    const ctx = canvas.getContext("2d");
+
+
+    const gradient = ctx.createRadialGradient(
+        256,
+        256,
+        0,
+        256,
+        256,
+        180
+    );
+
+
+    gradient.addColorStop(
+        0,
+        "rgba(255,255,255,0.9)"
+    );
+
+
+    gradient.addColorStop(
+        0.15,
+        "rgba(180,220,255,0.5)"
+    );
+
+
+    gradient.addColorStop(
+        0.4,
+        "rgba(100,170,255,0.15)"
+    );
+
+
+    gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle = gradient;
+
+
+    ctx.fillRect(
+        0,
+        0,
+        512,
+        512
+    );
+
+
+    return new THREE.CanvasTexture(canvas);
+
+}
+
+/* ======================================================
+   TEXTURA DO HALO
+====================================================== */
+
+function createHaloTexture(){
+
+    const canvas = document.createElement("canvas");
+
+    canvas.width = 512;
+    canvas.height = 512;
+
+
+    const ctx = canvas.getContext("2d");
+
+
+    const gradient = ctx.createRadialGradient(
+        256,
+        256,
+        120,
+        256,
+        256,
+        230
+    );
+
+
+    gradient.addColorStop(
+        0,
+        "rgba(80,170,255,0)"
+    );
+
+
+    gradient.addColorStop(
+        0.55,
+        "rgba(100,190,255,0.15)"
+    );
+
+
+    gradient.addColorStop(
+        0.65,
+        "rgba(150,220,255,0.35)"
+    );
+
+
+    gradient.addColorStop(
+        0.75,
+        "rgba(100,170,255,0.05)"
+    );
+
+
+    gradient.addColorStop(
+        1,
+        "rgba(0,0,0,0)"
+    );
+
+
+    ctx.fillStyle = gradient;
+
+
+    ctx.fillRect(
+        0,
+        0,
+        512,
+        512
+    );
+
+
+    return new THREE.CanvasTexture(canvas);
+
+}
+
 /* ======================================================
    TEXTURA DOS RAIOS
 ====================================================== */
 
-function createRaysTexture(){
+   function createRaysTexture(){
 
     const canvas = document.createElement("canvas");
 
@@ -64,98 +199,56 @@ function createRaysTexture(){
 
     const ctx = canvas.getContext("2d");
 
+    // ==========================
+    // Horizontal
+    // ==========================
 
-    // Raio vertical
-    const vertical = ctx.createLinearGradient(
-        0,0,
-        0,512
-    );
-
-
-    vertical.addColorStop(
+    let gradient = ctx.createLinearGradient(
         0,
-        "rgba(100,180,255,0)"
+        256,
+        512,
+        256
     );
 
-    vertical.addColorStop(
-        0.5,
-        "rgba(255,255,255,0.9)"
-    );
+    gradient.addColorStop(0.0,"rgba(255,255,255,0)");
+    gradient.addColorStop(0.15,"rgba(255,255,255,0.08)");
+    gradient.addColorStop(0.50,"rgba(255,255,255,1)");
+    gradient.addColorStop(0.85,"rgba(255,255,255,0.08)");
+    gradient.addColorStop(1.0,"rgba(255,255,255,0)");
 
-    vertical.addColorStop(
-        1,
-        "rgba(100,180,255,0)"
-    );
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 2;
 
-
-    ctx.fillStyle = vertical;
-
-
-    ctx.fillRect(
-        246,
-        40,
-        20,
-        432
-    );
-
-// =================================
-// Raios diagonais
-// =================================
-
-ctx.strokeStyle = "rgba(150,200,255,0.25)";
-ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(10,256);
+    ctx.lineTo(502,256);
+    ctx.stroke();
 
 
-// Diagonal \
-ctx.beginPath();
+    // ==========================
+    // Vertical
+    // ==========================
 
-ctx.moveTo(160,160);
-ctx.lineTo(352,352);
-
-ctx.stroke();
-
-
-// Diagonal /
-ctx.beginPath();
-
-ctx.moveTo(352,160);
-ctx.lineTo(160,352);
-
-ctx.stroke();
-
-    // Raio horizontal
-    const horizontal = ctx.createLinearGradient(
-        0,0,
-        512,0
-    );
-
-
-    horizontal.addColorStop(
+    gradient = ctx.createLinearGradient(
+        256,
         0,
-        "rgba(100,180,255,0)"
+        256,
+        512
     );
 
-    horizontal.addColorStop(
-        0.5,
-        "rgba(255,255,255,0.9)"
-    );
+    gradient.addColorStop(0.0,"rgba(255,255,255,0)");
+    gradient.addColorStop(0.15,"rgba(255,255,255,0.08)");
+    gradient.addColorStop(0.50,"rgba(255,255,255,1)");
+    gradient.addColorStop(0.85,"rgba(255,255,255,0.08)");
+    gradient.addColorStop(1.0,"rgba(255,255,255,0)");
 
-    horizontal.addColorStop(
-        1,
-        "rgba(100,180,255,0)"
-    );
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = 2;
 
-
-    ctx.fillStyle = horizontal;
-
-
-    ctx.fillRect(
-        40,
-        246,
-        432,
-        20
-    );
-
+    ctx.beginPath();
+    ctx.moveTo(256,10);
+    ctx.lineTo(256,502);
+    ctx.stroke();
 
     return new THREE.CanvasTexture(canvas);
 
@@ -179,7 +272,7 @@ function createCore(){
 
     const core = new THREE.Sprite(material);
 
-    core.scale.set(0.20,0.20,1);
+    core.scale.set(0.34,0.34,1);
 
     return core;
 
@@ -206,11 +299,82 @@ function createGlow(){
 
     const glow = new THREE.Sprite(material);
 
-    glow.scale.set(1.8,1.8,1);
+    glow.scale.set(1.1,1.1,1);
 
     return glow;
 
 }
+/* ======================================================
+   LENS FLARE
+====================================================== */
+
+function createFlare(){
+
+    const material = new THREE.SpriteMaterial({
+
+        map: createFlareTexture(),
+
+        color: 0x88ccff,
+
+        transparent:true,
+
+        opacity:0.35,
+
+        depthWrite:false,
+
+        blending:THREE.AdditiveBlending
+
+    });
+
+
+    const flare = new THREE.Sprite(material);
+
+
+    flare.scale.set(
+        2.5,
+        2.5,
+        1
+    );
+
+
+    return flare;
+
+}
+
+/* ======================================================
+   HALO
+====================================================== */
+
+function createHalo(){
+
+    const material = new THREE.SpriteMaterial({
+
+        map: createHaloTexture(),
+
+        color: 0x66bbff,
+
+        transparent: true,
+
+        opacity: 0.08,
+
+        depthWrite: false,
+
+        blending: THREE.AdditiveBlending
+
+    });
+
+    const halo = new THREE.Sprite(material);
+
+    halo.scale.set(
+        2.0,
+        2.0,
+        1
+    );
+
+    return halo;
+
+}
+
 /* ======================================================
    RAIOS DA ESTRELA
 ====================================================== */
@@ -329,38 +493,48 @@ function createInnerGlow(){
 export function createMainStar(scene) {
 
     const star = new THREE.Group();
-// Glow externo
+const halo = createHalo();
+star.add(halo);
+
 const glow = createGlow();
 star.add(glow);
 
-// Raios
 const rays = createRays();
 star.add(rays);
+
+const core = createCore();
+star.add(core);
 
 // Glow interno
 const innerGlow = createInnerGlow();
 star.add(innerGlow);
 
+// Lens flare
+const flare = createFlare();
+star.add(flare);
 
-// Núcleo
-const core = createCore();
-star.add(core);
+
 
     // Guarda referências para animação
     star.userData = {
 
-        core: core,
 
-        glow: glow,
+         halo: halo,
 
-          innerGlow: innerGlow,
+         glow: glow,
+
+         rays:rays,
+  
+          core: core,
           
-          rays:rays,
+          innerGlow: innerGlow,
+
+          flare:flare,
 
 
-        pulseSpeed: 4.2,
+        pulseSpeed: 1.2,
 
-        pulseAmount: 3.04
+        pulseAmount: 0.04
 
     };
 

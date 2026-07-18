@@ -1,5 +1,11 @@
 import * as THREE from "three";
 
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+
 
 import { createStars } from "./estrelas.js";
 import { createMediumStars } from "./estrelas_media.js";
@@ -45,9 +51,38 @@ export function createScene() {
 
         renderer.setSize(window.innerWidth, window.innerHeight);
 
+        composer.setSize(
+    window.innerWidth,
+    window.innerHeight
+);
+
     });
 
     // Loop de renderização
+
+const composer = new EffectComposer(renderer);
+
+composer.addPass(
+    new RenderPass(scene, camera)
+);
+
+const bloomPass = new UnrealBloomPass(
+
+    new THREE.Vector2(
+        window.innerWidth,
+        window.innerHeight
+    ),
+
+    1.2, // intensidade
+
+    0.45, // raio
+
+    0.75 // threshold
+
+);
+
+composer.addPass(bloomPass);
+
    function animate(){
 
     requestAnimationFrame(animate);
@@ -96,18 +131,31 @@ mainStar.userData.core.scale.set(
 
 // Glow
 mainStar.userData.glow.scale.set(
-    1.8 * starPulse,
-    1.8 * starPulse,
+    4.8 * starPulse,
+    4.8 * starPulse,
     1
 );
 
     // Respiração da câmera
     camera.position.z = 5 + Math.sin(time * 0.18) * 0.08;
 
+// Lens flare respirando
+
+const flarePulse =
+    1 +
+    Math.sin(time * 1.5) * 0.03;
+
+
+mainStar.userData.flare.scale.set(
+    1.6 * flarePulse,
+    1.6 * flarePulse,
+    1
+);
+
     // Faz a câmera olhar sempre para o centro
     camera.lookAt(0, 0, 0);
 
-    renderer.render(scene, camera);
+    composer.render();
 
 }
 
