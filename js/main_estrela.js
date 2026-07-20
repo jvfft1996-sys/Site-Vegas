@@ -335,8 +335,8 @@ ctx.lineWidth = 0.6;
 for(let i = 0; i < 34; i++){
 
    ctx.globalAlpha = Math.pow(
-    1 - (i / 34),
-    4
+    1 - (i / 34),4
+    
 );
     ctx.beginPath();
 
@@ -374,8 +374,8 @@ ctx.lineWidth =  0.4
 for(let i = 0; i < 38; i++){
 
     ctx.globalAlpha = Math.pow(
-    1 - (i / 38),
-    4
+    1 - (i / 38),4
+    
 );
 
     ctx.beginPath();
@@ -407,31 +407,328 @@ for(let i = 0; i < 38; i++){
     ctx.stroke();
 
 }
+gradient = ctx.createLinearGradient(
+    256,
+    10,
+    256,
+    502
+);
 
-// ==========================
-    // Vertical
-    // ==========================
+gradient.addColorStop(0.00,"rgba(255,255,255,0)");
+gradient.addColorStop(0.18,"rgba(120,190,255,0.10)");
+gradient.addColorStop(0.30,"rgba(150,210,255,0.10)");
+gradient.addColorStop(0.40,"rgba(210,235,255,0.45)");
+gradient.addColorStop(0.50,"rgba(255,255,255,1)");
+gradient.addColorStop(0.60,"rgba(210,235,255,0.45)");
+gradient.addColorStop(0.70,"rgba(150,210,255,0.10)");
+gradient.addColorStop(0.82,"rgba(120,190,255,0.10)");
+gradient.addColorStop(1.00,"rgba(255,255,255,0)");
 
-    gradient = ctx.createLinearGradient(
-        256,
-        0,
-        256,
-        512
+ctx.fillStyle = gradient;
+
+for(let i = 0; i < 20; i++){
+
+    ctx.fillRect(
+
+        250 + i * 0.12,
+
+        10 + i * 8,
+
+        4.1 - i * 0.18,
+
+        492 - i * 5
+
     );
 
-    gradient.addColorStop(0.0,"rgba(255,255,255,0)");
-    gradient.addColorStop(0.15,"rgba(255,255,255,0.08)");
-    gradient.addColorStop(0.50,"rgba(255,255,255,1)");
-    gradient.addColorStop(0.85,"rgba(255,255,255,0.08)");
-    gradient.addColorStop(1.0,"rgba(255,255,255,0)");
+}
 
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 2;
+const coreBeamV = ctx.createLinearGradient(
+    256,
+    180,
+    256,
+    332
+);
+
+coreBeamV.addColorStop(0,"rgba(255,255,255,0)");
+coreBeamV.addColorStop(0.35,"rgba(180,220,255,0.55)");
+coreBeamV.addColorStop(0.50,"rgba(255,255,255,1)");
+coreBeamV.addColorStop(0.65,"rgba(180,220,255,0.55)");
+coreBeamV.addColorStop(1,"rgba(255,255,255,0)");
+
+ctx.fillStyle = coreBeamV;
+
+ctx.fillRect(
+    254,
+    206,
+    3,
+    100
+);
+
+const energyBeamV = ctx.createLinearGradient(
+    256,
+    40,
+    256,
+    472
+);
+
+energyBeamV.addColorStop(0,"rgba(255,255,255,0)");
+energyBeamV.addColorStop(0.30,"rgba(120,200,255,0.10)");
+energyBeamV.addColorStop(0.50,"rgba(255,255,255,0.55)");
+energyBeamV.addColorStop(0.70,"rgba(120,200,255,0.10)");
+energyBeamV.addColorStop(1,"rgba(255,255,255,0)");
+
+ctx.fillStyle = energyBeamV;
+
+ctx.fillRect(
+    253,
+    40,
+    6,
+    432
+);
+
+ctx.strokeStyle = "rgba(180,220,255,0.28)";
+ctx.lineWidth = 0.6;
+
+for(let i = 0; i < 34; i++){
+
+    ctx.globalAlpha = Math.pow(
+        1 - (i / 34),
+        4
+    );
 
     ctx.beginPath();
-    ctx.moveTo(256,10);
-    ctx.lineTo(256,502);
+
+    ctx.moveTo(
+        256,
+        256 - i * 7
+    );
+
+    ctx.lineTo(
+        256,
+        256 - (i + 1) * 7
+    );
+
     ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 + i * 7
+    );
+
+    ctx.lineTo(
+        256,
+        256 + (i + 1) * 7
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.strokeStyle = "rgba(255,255,255,0.95)";
+ctx.lineWidth = 0.4;
+
+for(let i = 0; i < 38; i++){
+
+    ctx.globalAlpha = Math.pow(
+        1 - (i / 38),
+        4
+    );
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 - i * 6
+    );
+
+    ctx.lineTo(
+        256,
+        256 - (i + 1) * 6
+    );
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 + i * 6
+    );
+
+    ctx.lineTo(
+        256,
+        256 + (i + 1) * 6
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.globalAlpha = 1;
+
+
+gradient = ctx.createLinearGradient(
+    256,
+    10,
+    256,
+    502
+);
+
+gradient.addColorStop(0.00,"rgba(255,255,255,0)");
+gradient.addColorStop(0.18,"rgba(120,190,255,0.10)");
+gradient.addColorStop(0.30,"rgba(150,210,255,0.10)");
+gradient.addColorStop(0.40,"rgba(210,235,255,0.45)");
+gradient.addColorStop(0.50,"rgba(255,255,255,1)");
+gradient.addColorStop(0.60,"rgba(210,235,255,0.45)");
+gradient.addColorStop(0.70,"rgba(150,210,255,0.10)");
+gradient.addColorStop(0.82,"rgba(120,190,255,0.10)");
+gradient.addColorStop(1.00,"rgba(255,255,255,0)");
+
+ctx.fillStyle = gradient;
+
+for(let i = 0; i < 20; i++){
+
+    ctx.fillRect(
+
+        250 + i * 0.12,
+
+        10 + i * 8,
+
+        4.1 - i * 0.18,
+
+        492 - i * 5
+
+    );
+
+}
+
+const coreBeamV2 = ctx.createLinearGradient(
+    256,
+    180,
+    256,
+    332
+);
+
+coreBeamV2.addColorStop(0,"rgba(255,255,255,0)");
+coreBeamV2.addColorStop(0.35,"rgba(180,220,255,0.55)");
+coreBeamV2.addColorStop(0.50,"rgba(255,255,255,1)");
+coreBeamV2.addColorStop(0.65,"rgba(180,220,255,0.55)");
+coreBeamV2.addColorStop(1,"rgba(255,255,255,0)");
+
+ctx.fillStyle = coreBeamV2;
+
+ctx.fillRect(
+    254,
+    206,
+    3,
+    100
+);
+
+const energyBeamV2 = ctx.createLinearGradient(
+    256,
+    40,
+    256,
+    472
+);
+
+energyBeamV2.addColorStop(0,"rgba(255,255,255,0)");
+energyBeamV2.addColorStop(0.30,"rgba(120,200,255,0.10)");
+energyBeamV2.addColorStop(0.50,"rgba(255,255,255,0.55)");
+energyBeamV2.addColorStop(0.70,"rgba(120,200,255,0.10)");
+energyBeamV2.addColorStop(1,"rgba(255,255,255,0)");
+
+ctx.fillStyle = energyBeamV2;
+
+ctx.fillRect(
+    253,
+    40,
+    6,
+    432
+);
+
+ctx.strokeStyle = "rgba(180,220,255,0.28)";
+ctx.lineWidth = 0.6;
+
+for(let i = 0; i < 34; i++){
+
+    ctx.globalAlpha = Math.pow(
+        1 - (i / 34),
+        4
+    );
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 - i * 7
+    );
+
+    ctx.lineTo(
+        256,
+        256 - (i + 1) * 7
+    );
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 + i * 7
+    );
+
+    ctx.lineTo(
+        256,
+        256 + (i + 1) * 7
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.strokeStyle = "rgba(255,255,255,0.95)";
+ctx.lineWidth = 0.4;
+
+for(let i = 0; i < 38; i++){
+
+    ctx.globalAlpha = Math.pow(
+        1 - (i / 38),
+        4
+    );
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 - i * 6
+    );
+
+    ctx.lineTo(
+        256,
+        256 - (i + 1) * 6
+    );
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        256,
+        256 + i * 6
+    );
+
+    ctx.lineTo(
+        256,
+        256 + (i + 1) * 6
+    );
+
+    ctx.stroke();
+
+}
+
+ctx.globalAlpha = 1;
 
     // ==========================
 // Diagonal \
