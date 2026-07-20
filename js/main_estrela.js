@@ -261,9 +261,9 @@ ctx.translate(256,256);
 ctx.rotate(Math.PI / 4);
 
 const diagonal1 = ctx.createLinearGradient(
-    -256,
+    -120,
     0,
-    256,
+    120,
     0
 );
 
@@ -275,9 +275,9 @@ diagonal1.addColorStop(1,"rgba(255,255,255,0)");
 ctx.fillStyle = diagonal1;
 
 ctx.fillRect(
-    -100,
+    -60,
     -1,
-    200,
+    120,
     2
 );
 
@@ -296,9 +296,9 @@ ctx.rotate(-Math.PI / 4);
 
 
 const diagonal2 = ctx.createLinearGradient(
-    -256,
+    -120,
     0,
-    256,
+    120,
     0
 );
 
@@ -312,9 +312,9 @@ ctx.fillStyle = diagonal2;
 
 
 ctx.fillRect(
-    -100,
+    -60,
     -1,
-    200,
+    120,
     2
 );
 
