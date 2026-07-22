@@ -75,7 +75,7 @@ const bloomPass = new UnrealBloomPass(
 
     0.8, // intensidade
 
-    0.45, // raio
+     0.45, // raio
 
     0.75 // threshold
 
@@ -123,16 +123,16 @@ mainStar.userData.rays.scale.set(
 
 // Núcleo
 mainStar.userData.core.scale.set(
-    0.20 * starPulse,
-    0.20 * starPulse,
+    5.20 * starPulse,
+    .20 * starPulse,
     1
 );
 
 
 // Glow
 mainStar.userData.glow.scale.set(
-    7* starPulse,
-    7 * starPulse,
+    4.4* starPulse,
+    4.4 * starPulse,
     1
 );
 

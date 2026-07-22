@@ -11,15 +11,17 @@ function createCoreTexture() {
 
     const gradient = ctx.createRadialGradient(
         128,128,0,
-        128,128,40
+        128,128,48
     );
-
-    gradient.addColorStop(0,"rgba(255,255,255,1)");
-    gradient.addColorStop(0.4,"rgba(255,255,255,1)");
-    gradient.addColorStop(1,"rgba(255,255,255,0)");
+gradient.addColorStop(0.00,"rgba(255,255,255,1)");
+gradient.addColorStop(0.10,"rgba(255,255,255,1)");
+gradient.addColorStop(0.35,"rgba(220,240,255,0.95)");
+gradient.addColorStop(0.65,"rgba(170,210,255,0.35)");
+gradient.addColorStop(1.00,"rgba(255,255,255,0)");
 
     ctx.fillStyle = gradient;
     ctx.fillRect(0,0,256,256);
+
 
     return new THREE.CanvasTexture(canvas);
 }
@@ -148,20 +150,20 @@ function createHaloTexture(){
 
 
     gradient.addColorStop(
-        0.55,
+        0.58,
         "rgba(100,190,255,0.15)"
     );
 
 
     gradient.addColorStop(
-        0.65,
+        0.66,
         "rgba(150,220,255,0.35)"
     );
 
 
     gradient.addColorStop(
-        0.75,
-        "rgba(100,170,255,0.05)"
+        0.73,
+        "rgba(100,170,255,0.02)"
     );
 
 
@@ -407,124 +409,9 @@ for(let i = 0; i < 38; i++){
     ctx.stroke();
 
 }
-gradient = ctx.createLinearGradient(
-    256,
-    10,
-    256,
-    502
-);
 
-gradient.addColorStop(0.00,"rgba(255,255,255,0)");
-gradient.addColorStop(0.18,"rgba(120,190,255,0.10)");
-gradient.addColorStop(0.30,"rgba(150,210,255,0.10)");
-gradient.addColorStop(0.40,"rgba(210,235,255,0.45)");
-gradient.addColorStop(0.50,"rgba(255,255,255,1)");
-gradient.addColorStop(0.60,"rgba(210,235,255,0.45)");
-gradient.addColorStop(0.70,"rgba(150,210,255,0.10)");
-gradient.addColorStop(0.82,"rgba(120,190,255,0.10)");
-gradient.addColorStop(1.00,"rgba(255,255,255,0)");
 
-ctx.fillStyle = gradient;
-
-for(let i = 0; i < 20; i++){
-
-    ctx.fillRect(
-
-        250 + i * 0.12,
-
-        10 + i * 8,
-
-        4.1 - i * 0.18,
-
-        492 - i * 5
-
-    );
-
-}
-
-const coreBeamV = ctx.createLinearGradient(
-    256,
-    180,
-    256,
-    332
-);
-
-coreBeamV.addColorStop(0,"rgba(255,255,255,0)");
-coreBeamV.addColorStop(0.35,"rgba(180,220,255,0.55)");
-coreBeamV.addColorStop(0.50,"rgba(255,255,255,1)");
-coreBeamV.addColorStop(0.65,"rgba(180,220,255,0.55)");
-coreBeamV.addColorStop(1,"rgba(255,255,255,0)");
-
-ctx.fillStyle = coreBeamV;
-
-ctx.fillRect(
-    254,
-    206,
-    3,
-    100
-);
-
-const energyBeamV = ctx.createLinearGradient(
-    256,
-    40,
-    256,
-    472
-);
-
-energyBeamV.addColorStop(0,"rgba(255,255,255,0)");
-energyBeamV.addColorStop(0.30,"rgba(120,200,255,0.10)");
-energyBeamV.addColorStop(0.50,"rgba(255,255,255,0.55)");
-energyBeamV.addColorStop(0.70,"rgba(120,200,255,0.10)");
-energyBeamV.addColorStop(1,"rgba(255,255,255,0)");
-
-ctx.fillStyle = energyBeamV;
-
-ctx.fillRect(
-    253,
-    40,
-    6,
-    432
-);
-
-ctx.strokeStyle = "rgba(180,220,255,0.28)";
-ctx.lineWidth = 0.6;
-
-for(let i = 0; i < 34; i++){
-
-    ctx.globalAlpha = Math.pow(
-        1 - (i / 34),
-        4
-    );
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        256,
-        256 - i * 7
-    );
-
-    ctx.lineTo(
-        256,
-        256 - (i + 1) * 7
-    );
-
-    ctx.stroke();
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        256,
-        256 + i * 7
-    );
-
-    ctx.lineTo(
-        256,
-        256 + (i + 1) * 7
-    );
-
-    ctx.stroke();
-
-}
+////VERTICAL////    
 
 ctx.strokeStyle = "rgba(255,255,255,0.95)";
 ctx.lineWidth = 0.4;
@@ -592,13 +479,13 @@ for(let i = 0; i < 20; i++){
 
     ctx.fillRect(
 
-        250 + i * 0.12,
+        250 + i * 0.18,
 
-        10 + i * 8,
+        1 + i * 8,
 
-        4.1 - i * 0.18,
+        4.1 - i * 0.22,
 
-        492 - i * 5
+        500 - i * 50
 
     );
 
@@ -620,9 +507,9 @@ coreBeamV2.addColorStop(1,"rgba(255,255,255,0)");
 ctx.fillStyle = coreBeamV2;
 
 ctx.fillRect(
-    254,
+    255,
     206,
-    3,
+    2,
     100
 );
 
@@ -644,18 +531,18 @@ ctx.fillStyle = energyBeamV2;
 ctx.fillRect(
     253,
     40,
-    6,
+    4,
     432
 );
 
 ctx.strokeStyle = "rgba(180,220,255,0.28)";
 ctx.lineWidth = 0.6;
 
-for(let i = 0; i < 34; i++){
+for(let i = 0; i < 40; i++){
 
     ctx.globalAlpha = Math.pow(
         1 - (i / 34),
-        4
+        5
     );
 
     ctx.beginPath();
@@ -695,7 +582,7 @@ for(let i = 0; i < 38; i++){
 
     ctx.globalAlpha = Math.pow(
         1 - (i / 38),
-        4
+        5   
     );
 
     ctx.beginPath();
@@ -729,6 +616,7 @@ for(let i = 0; i < 38; i++){
 }
 
 ctx.globalAlpha = 1;
+
 
     // ==========================
 // Diagonal \
@@ -755,10 +643,10 @@ diagonal1.addColorStop(1,"rgba(255,255,255,0)");
 ctx.fillStyle = diagonal1;
 
 ctx.fillRect(
-    -60,
-    -1,
-    120,
-    2
+    -42,
+    -0.5,
+    84,
+    1
 );
 
 ctx.restore();
@@ -840,7 +728,7 @@ function createGlow(){
 
         transparent:true,
 
-        opacity:0.35,
+        opacity:0.26,
 
         depthWrite:false,
 
@@ -906,7 +794,7 @@ function createHalo(){
 
         transparent: true,
 
-        opacity: 0.08,
+        opacity: 0.03,
 
         depthWrite: false,
 
@@ -917,8 +805,8 @@ function createHalo(){
     const halo = new THREE.Sprite(material);
 
     halo.scale.set(
-        2.8,
-        2.8,
+        6.0,
+        6.0,
         1
     );
 
@@ -940,7 +828,7 @@ function createRays(){
 
         transparent:true,
 
-        opacity:1,
+        opacity:0.70,
 
         depthWrite:false,
 
