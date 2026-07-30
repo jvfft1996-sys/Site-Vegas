@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cobrinha da História — Jogo educativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="sq-page">
+    <div class="sq-wrap">
+      <header class="sq-head">
+        <h1 class="sq-title">Cobrinha da História</h1>
+        <div class="sq-score">SCORE <span class="sq-score-value">00</span></div>
+        <div class="sq-question">
+          <p class="sq-q"></p>
+          <div class="sq-answers">
+            <span class="sq-ans sq-ans--red"></span>
+            <span class="sq-ans sq-ans--blue"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="sq-stage">
+        <canvas class="sq-canvas" width="600" height="600"></canvas>
+        <div class="sq-menu">
+          <span class="sq-menu-title">GAME OVER</span>
+          <span class="sq-menu-sub">Resposta errada! Score <span class="sq-final">00</span></span>
+          <button class="sq-btn" type="button">Jogar novamente</button>
+        </div>
+        <div class="sq-flash"></div>
+      </div>
+
+      <p class="sq-hint">Use as setas ou WASD · leve a cobrinha até o bloco da resposta certa</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

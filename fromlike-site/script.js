@@ -1,8 +1,36 @@
 const GAMES = [
-  { title: "the\nsnake\ngame", img: "assets/snake_game.png", date: "À venda agora", genre: "educativo", },
-  { title: "It's\n just\n a\n boat.", img: "assets/barco.png", date: "2026", genre: "Ação multijogador",  },
-  { title: "gladiators", img: "assets/traidors.png", date: "À venda agora", genre: "Ação mecha",},
-  { title: "I will love you\n again and again.", img: "assets/love.png", date: "À venda agora", genre: "romance visual", },
+  { 
+    title: "the\nsnake\ngame", 
+    img: "assets/snake_game.png", 
+    date: "À venda agora", 
+    genre: "educativo", 
+    ctaText: "JOGAR", 
+    link: "cobrinha/index.html" 
+  },
+  { 
+    title: "It's\n just\n a\n boat.", 
+    img: "assets/barco.png", 
+    date: "2026", 
+    genre: "Ação multijogador", 
+    ctaText: "SAIBA MAIS", 
+    link: "#" 
+  },
+  { 
+    title: "gladiators", 
+    img: "assets/traidors.png", 
+    date: "À venda agora", 
+    genre: "Ação mecha", 
+    ctaText: "SAIBA MAIS", 
+    link: "#" 
+  },
+  { 
+    title: "I will love you\n again and again.", 
+    img: "assets/love.png", 
+    date: "À venda agora", 
+    genre: "romance visual", 
+    ctaText: "SAIBA MAIS", 
+    link: "#" 
+  },
 ];
 
 const AUTOPLAY = 6000;
@@ -28,9 +56,12 @@ GAMES.forEach((g, i) => {
         <b>Lançamento</b><span>${g.date}</span>
         <b>Gênero</b><span>${g.genre}</span>
       </div>
-      <button class="cta">SAIBA MAIS</button>
+      <a href="${g.link}" class="cta">${g.ctaText}</a>
     </div>`;
-  s.addEventListener("click", () => go(i));
+  s.addEventListener("click", (e) => {
+    if (e.target.classList.contains('cta')) return;
+    go(i);
+  });
   s.addEventListener("mouseenter", () => { paused = true; });
   s.addEventListener("mouseleave", () => { paused = false; });
   slidesEl.appendChild(s);
