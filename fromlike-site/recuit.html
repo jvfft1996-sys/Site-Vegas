@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruit - Vegas</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+            text-align: left;
+        }
+
+        /* Recruit Sections */
+        .recruit-section {
+            border-top: 1px solid #eee;
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+        }
+
+        .section-content {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .section-content p {
+            margin-bottom: 30px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #333;
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Job List */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .job-item {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #ccc;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            transition: border-color 0.3s;
+        }
+
+        .job-item:hover {
+            border-left-color: #000;
+        }
+
+        /* Footer Note */
+        .footer-note {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .recruit-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">VEGAS</div>
+        </header>
+
+        <main>
+            <h1>RECRUIT</h1>
+
+            <!-- Mid-career Section -->
+            <section class="recruit-section">
+                <div class="section-title">Mid-career<br>Recruitment</div>
+                <div class="section-content">
+                    <p>We are looking for professionals who share our passion for creating innovative digital experiences. Join our diverse team of experts in Las Vegas and Reno.</p>
+                    
+                    <div class="job-grid">
+                        <a href="#" class="job-item">Game Designer</a>
+                        <a href="#" class="job-item">Software Engineer</a>
+                        <a href="#" class="job-item">3D Artist</a>
+                        <a href="#" class="job-item">Project Manager</a>
+                        <a href="#" class="job-item">Network Architect</a>
+                        <a href="#" class="job-item">UI/UX Designer</a>
+                    </div>
+                    
+                    <br><br>
+                    <a href="#" class="btn-link">View Open Positions</a>
+                </div>
+            </section>
+
+            <!-- New Graduate Section -->
+            <section class="recruit-section">
+                <div class="section-title">New Graduate<br>Recruitment</div>
+                <div class="section-content">
+                    <p>Vegas offers a dynamic environment for new graduates to start their careers. We provide comprehensive training and mentorship programs to help you grow.</p>
+                    <a href="#" class="btn-link">Learn More about Graduate Programs</a>
+                </div>
+            </section>
+
+            <!-- Information Session Section -->
+            <section class="recruit-section">
+                <div class="section-title">Information<br>Sessions</div>
+                <div class="section-content">
+                    <p>We hold regular online information sessions to provide insights into our development process and company culture.</p>
+                    <a href="#" class="btn-link">Schedule & Registration</a>
+                </div>
+            </section>
+
+            <!-- Message Section -->
+            <section class="recruit-section">
+                <div class="section-title">Message from<br>the CEO</div>
+                <div class="section-content">
+                    <p>"At Vegas, we don't just build products; we build the future of interactive entertainment. We are looking for individuals who are not afraid to challenge the status quo and bring new perspectives to our table."</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer-note">
+            &copy; 2026 Vegas, Inc. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

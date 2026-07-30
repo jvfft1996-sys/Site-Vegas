@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-bottom: 60px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #999;
+            font-size: 14px;
+            margin-right: 20px;
+        }
+
+        nav .active {
+            color: #333;
+        }
+
+        nav span {
+            color: #ccc;
+            margin-right: 20px;
+        }
+
+        .history-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px 0;
+            border-top: 1px solid #eee;
+            padding-top: 40px;
+        }
+
+        .date {
+            font-weight: bold;
+            color: #666;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        .event {
+            color: #666;
+            font-size: 14px;
+            padding: 20px 0;
+            border-bottom: 1px solid #f9f9f9;
+        }
+
+        .event:last-child {
+            border-bottom: none;
+        }
+
+        .event-title {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">VEGAS</div>
+        </header>
+
+        <main>
+            <h1>HISTORY</h1>
+
+            <nav>
+                <a href="Company.html">About</a>
+                <span>|</span>
+                <a href="#" class="active">History</a>
+                <span>|</span>
+            </nav>
+
+            <div class="history-grid">
+                <div class="date">A origem</div>
+                <div class="event">
+                    <span class="event-title">CEO</span>
+                    sempre quis criar minha propria empresa de jogos onde poderiamos desenvolver os mais diversificados jogos para a industria dos video game.
+                    -João Assis
+                </div>
+
+                <div class="date">A formação</div>
+                <div class="event">
+                    <span class="event-title">Fundação da nossa equipe</span>
+                    nossa equipe e formada por profissionais competentes que sempre buscam inovação e elevando nosso nivel para uma alta posição na insdustria dos jogos
+                </div>
+
+                <div class="date">nosso primeiro jogo</div>
+                <div class="event">
+                    <span class="event-title">The snake game</span>
+                    the snake game foi criado e pensado pelo gestor e CEO João Vitor Assis com a proposta de criar um jogo educativo desafiador para essa nova lea de gamers da nova geração, aprendendo jogando com vegas.
+            </div>
+        </main>
+    </div>
+</body>
+</html>

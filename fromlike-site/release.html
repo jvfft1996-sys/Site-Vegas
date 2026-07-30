@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Release - Vegas</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            color: #333;
+        }
+
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            width: 100%;
+            margin-bottom: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            background-color: #a0a0a0;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            border-right: 1px solid #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab.active {
+            background-color: #707070;
+        }
+
+        .tab:hover:not(.active) {
+            background-color: #888;
+        }
+
+        /* Press Release List */
+        .release-content {
+            display: none;
+            margin-top: 40px;
+        }
+
+        .release-content.active {
+            display: block;
+        }
+
+        .release-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        .release-date {
+            color: #999;
+        }
+
+        .release-link {
+            color: #999;
+            text-decoration: underline;
+        }
+
+        .release-link:hover {
+            color: #333;
+        }
+
+        .timezone-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .release-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">VEGAS</div>
+        </header>
+
+        <main>
+            <h1>PRESS RELEASE</h1>
+
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('2026', this)">2026</div>
+                <div class="tab" onclick="showTab('2025', this)">2025</div>
+                <div class="tab" onclick="showTab('other', this)">other</div>
+            </div>
+
+            <!-- Content 2026 -->
+            <div id="2026" class="release-content active">
+                <div class="release-item">
+                    <div class="release-date">Thu Jun 04 2026</div>
+                    <a href="#" class="release-link">Vegas Pro 5 "Neon Horizon Edition" Releasing on August 28th (Fri) 2026</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Wed May 12 2026</div>
+                    <a href="#" class="release-link">Strategic Partnership Announcement with Global Tech Industries</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Mon Feb 20 2026</div>
+                    <a href="#" class="release-link">Opening of the New Innovation Center in Las Vegas</a>
+                </div>
+            </div>
+
+            <!-- Content 2025 -->
+            <div id="2025" class="release-content">
+                <div class="release-item">
+                    <div class="release-date">Mon Dec 15 2025</div>
+                    <a href="#" class="release-link">Vegas Cloud Infrastructure Expansion Completed</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Wed Sep 10 2025</div>
+                    <a href="#" class="release-link">Major Update to Vegas Mobile Ecosystem Released</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Sun Jan 05 2025</div>
+                    <a href="#" class="release-link">CEO New Year Vision Statement: The Future of Vegas</a>
+                </div>
+            </div>
+
+            <!-- Content Other -->
+            <div id="other" class="release-content">
+                <div class="release-item">
+                    <div class="release-date">Tue Nov 12 2024</div>
+                    <a href="#" class="release-link">Vegas 14th Anniversary Celebration Events</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Mon May 22 2023</div>
+                    <a href="#" class="release-link">Vegas 2.0 Core Architecture Unveiled</a>
+                </div>
+                <div class="release-item">
+                    <div class="release-date">Fri Aug 15 2010</div>
+                    <a href="#" class="release-link">Company Founding: The Birth of Vegas</a>
+                </div>
+            </div>
+
+            <div class="timezone-note">
+                * UTC+9:00
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showTab(year, tabElement) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.release-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Deactivate all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected content
+            document.getElementById(year).classList.add('active');
+
+            // Activate clicked tab
+            tabElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
