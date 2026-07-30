@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VEGAS — Estúdio de jogos</title>
+<meta name="description" content="Site Vegas studio"/>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="#top">VEGAS</a>
+  <nav class="main-nav" id="mainNav">
+    <a href="#products">COMPANY</a>
+    <a href="#products">PRODUCTS</a>
+    <a href="#news">PRESS RELEASE</a>
+    <a href="#news">RECRUIT</a>
+    <a href="#footer">SUPPORT</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+  <!-- BANNER INTERATIVO -->
+  <section class="banner" id="banner" aria-label="Destaques">
+    <div class="slides" id="slides">
+      <!-- painéis injetados via JS -->
+    </div>
+
+    <div class="banner-ui">
+      <button class="arrow prev" id="prev" aria-label="Anterior">&#10094;</button>
+      <button class="arrow next" id="next" aria-label="Próximo">&#10095;</button>
+      <div class="dots" id="dots"></div>
+      <div class="progress"><span id="progressBar"></span></div>
+    </div>
+  </section>
+
+
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <h2 class="section-title">PRODUCTS</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="foot-inner">
+    <p class="logo small">FROM SOFTWARE</p>
+    <nav><a href="#">Privacidade</a><a href="#">Cookies</a><a href="#">Contato</a></nav>
+    <p class="copy">© 2026 Projeto demonstrativo. Site fictício inspirado no layout da FromSoftware.</p>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <p>Este site usa cookies para melhorar a experiência de navegação.</p>
+  <button id="acceptCookie">Aceitar</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
