@@ -1,0 +1,114 @@
+/* ===== TEMA ESPACIAL — sobrescreve o visual claro das páginas internas ===== */
+:root{
+  --bg:#03060e; --fg:#ffffff; --muted:#8fa3c4;
+  --accent:#2f7dff; --accent-2:#0b3f9e; --glow:#7fb2ff;
+  --line:rgba(120,170,255,.18);
+}
+body{
+  background:#03060e !important;
+  color:#dbe6fb !important;
+  position:relative;
+}
+#space{
+  position:fixed;inset:0;z-index:-2;display:block;
+  background:
+    radial-gradient(1100px 700px at 78% 8%, rgba(20,70,180,.28), transparent 60%),
+    radial-gradient(900px 620px at 12% 78%, rgba(10,40,120,.30), transparent 62%),
+    linear-gradient(180deg,#03060e 0%,#050d20 45%,#02040b 100%);
+}
+#space-vignette{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(0,0,0,.55) 100%);
+}
+.container{position:relative;z-index:1}
+
+/* cabeçalho / logo — VEGAS metálico com estrela atravessando o centro */
+header{border-bottom:1px solid var(--line) !important}
+.logo{
+  position:relative;overflow:visible;color:#fff !important;
+  display:inline-flex !important;align-items:center;justify-content:center;
+  padding:14px 10px;
+}
+.logo-txt{
+  position:relative;z-index:3;
+  background:linear-gradient(180deg,#ffffff 0%,#dfeaff 26%,#a9c2e8 52%,#6684b3 74%,#3a557f 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent !important;
+  filter:
+    drop-shadow(0 -1px 0 rgba(255,255,255,.55))
+    drop-shadow(0 2px 3px rgba(0,4,16,.75))
+    drop-shadow(0 0 14px rgba(120,175,255,.35));
+}
+.logo::before{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:2px;height:2.7em;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(120,170,255,0) 0%, rgba(190,220,255,.85) 32%,
+    #ffffff 50%, rgba(190,220,255,.85) 68%, rgba(120,170,255,0) 100%);
+  filter:drop-shadow(0 0 6px rgba(140,190,255,.9)) drop-shadow(0 0 16px rgba(47,125,255,.65));
+}
+.logo::after{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:112%;height:2px;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(120,170,255,0) 0%, rgba(190,220,255,.8) 28%,
+    #ffffff 50%, rgba(190,220,255,.8) 72%, rgba(120,170,255,0) 100%);
+  filter:drop-shadow(0 0 6px rgba(140,190,255,.9)) drop-shadow(0 0 14px rgba(47,125,255,.55));
+}
+.star-halo{
+  position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:2.3em;height:2.3em;z-index:0;pointer-events:none;
+}
+.star-halo::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  border:1px solid rgba(127,178,255,.12);
+  box-shadow:0 0 6px rgba(47,125,255,.05) inset;
+  animation:orbit-spin 14s linear infinite;
+}
+.star-halo::after{
+  content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;
+  width:.5em;height:.5em;border-radius:50%;z-index:2;
+  background:radial-gradient(circle,#ffffff 0%,#bfe0ff 45%,rgba(47,125,255,0) 78%);
+  filter:drop-shadow(0 0 10px rgba(160,210,255,1)) drop-shadow(0 0 24px rgba(47,125,255,.9));
+  animation:twinkle 2.6s ease-in-out infinite;
+}
+@keyframes twinkle{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.75;transform:scale(.82)}
+}
+@keyframes orbit-spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+.logo.small{font-size:19px;padding:8px 6px}
+.logo.small .star-halo{width:1.9em;height:1.9em}
+
+h1,h2,h3{color:#ffffff !important}
+p,li,span,div,td,th{color:inherit}
+a{color:#9fc4ff !important;transition:color .25s}
+a:hover{color:#ffffff !important;text-shadow:0 0 10px rgba(47,125,255,.8)}
+nav span{color:rgba(120,170,255,.35) !important}
+
+hr,.footer-line,.info-grid,.history-grid,.job-grid,.recruit-section,
+.support-section,.release-item,.faq-item,.tabs,.event,.job-item,.footer-note{
+  border-color:var(--line) !important;
+}
+.label{color:#9fc4ff !important}
+.value,.name,.role,.date,.release-date,.timezone-note,.footer-note,.section-content{color:#b9c9e6 !important}
+.role{color:#7f93b5 !important}
+.section-title{color:#ffffff !important;border-color:var(--line) !important}
+.event-title,.faq-question{color:#ffffff !important}
+
+/* blocos com fundo claro viram painéis espaciais */
+.release-item,.faq-item,.job-item,.event,.recruit-section,.support-section,.section-content{
+  background:rgba(8,18,42,.45) !important;
+}
+.tab{color:#9fc4ff !important;border-color:var(--line) !important;background:transparent !important}
+.tab.active,.active{color:#ffffff !important;border-color:var(--accent) !important}
+.btn-link,.release-link,.link-list a{
+  color:#cfe2ff !important;border-color:rgba(127,178,255,.45) !important;
+}
+.btn-link:hover,.release-link:hover{
+  background:linear-gradient(90deg,var(--accent-2),var(--accent)) !important;
+  color:#fff !important;box-shadow:0 0 18px rgba(47,125,255,.55);
+}
+::selection{background:rgba(47,125,255,.45);color:#fff}

@@ -1,97 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Vegas Studio | Criando o Futuro dos Jogos</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VEGAS — Estúdio de jogos</title>
+<meta name="description" content="Site Vegas studio"/>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="space.css" />
 </head>
 <body>
-    <div id="intro">
+<header class="site-header">
+  <a class="logo" href="index.html#home"><span class="star-halo" aria-hidden="true"></span><span class="logo-txt">VEGAS</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="index.html#home">INICIO</a>
+    <a href="historia.html">QUEM SOMOS?</a>
+    <a href="release.html">PROJETOS</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
 
-    <canvas id="space"></canvas>
+<main id="home">
+  <!-- BANNER INTERATIVO -->
+  <section class="banner" id="banner" aria-label="Destaques">
+    <div class="slides" id="slides">
+      <!-- painéis injetados via JS -->
+    </div>
 
+    <div class="banner-ui">
+      <button class="arrow prev" id="prev" aria-label="Anterior">&#10094;</button>
+      <button class="arrow next" id="next" aria-label="Próximo">&#10095;</button>
+      <div class="dots" id="dots"></div>
+      <div class="progress"><span id="progressBar"></span></div>
+
+      <div class="banner-info" id="bannerInfo"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="foot-inner">
+    <p class="logo small"><span class="star-halo" aria-hidden="true"></span><span class="logo-txt">VEGAS</span></p>
+    <p class="copy">© 2026 Projeto demonstrativo. Site fictício inspirado no layout da VEGAS.</p>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <p>Este site usa cookies para melhorar a experiência de navegação.</p>
+  <button id="acceptCookie">Aceitar</button>
 </div>
 
-<section class="hero">
-
-    <div class="panel active" style="background-image:url('img/jogo1.jpg')">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span>JOGO 01</span>
-            <h1>Nome do Jogo</h1>
-            <p>Uma pequena descrição do jogo.</p>
-            <a href="#">Ver mais</a>
-        </div>
-    </div>
-
-    <div class="panel" style="background-image:url('img/jogo2.jpg')">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span>JOGO 02</span>
-            <h1>Outro Jogo</h1>
-            <p>Descrição.</p>
-            <a href="#">Ver mais</a>
-        </div>
-    </div>
-
-    <div class="panel" style="background-image:url('img/jogo3.jpg')">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span>JOGO 03</span>
-            <h1>Nome</h1>
-            <p>Descrição.</p>
-            <a href="#">Ver mais</a>
-        </div>
-    </div>
-
-    <div class="panel" style="background-image:url('img/jogo4.jpg')">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span>JOGO 04</span>
-            <h1>Nome</h1>
-            <p>Descrição.</p>
-            <a href="#">Ver mais</a>
-        </div>
-    </div>
-
-    <div class="panel" style="background-image:url('img/jogo5.jpg')">
-        <div class="overlay"></div>
-
-        <div class="content">
-            <span>JOGO 05</span>
-            <h1>Nome</h1>
-            <p>Descrição.</p>
-            <a href="#">Ver mais</a>
-        </div>
-    </div>
-
-</section>
-
-<script type="module" src="/main.js"></script>
-
-<script>
-
-const panels = document.querySelectorAll(".panel");
-
-panels.forEach(panel => {
-
-    panel.addEventListener("mouseenter", () => {
-
-        panels.forEach(p => p.classList.remove("active"));
-
-        panel.classList.add("active");
-
-    });
-
-});
-
-
-</script>
+<script src="space.js"></script>
+<script src="nav.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
